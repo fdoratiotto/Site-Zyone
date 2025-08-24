@@ -190,18 +190,14 @@
   <script>
     document.getElementById("whatsappForm").addEventListener("submit", function(e){
       e.preventDefault();
-
       // Pegando os valores do formulário
       const nome = document.getElementById("nome").value;
       const email = document.getElementById("email").value;
       const whatsapp = document.getElementById("whatsapp").value;
-
       // Número do seu WhatsApp (coloque o seu com DDI e DDD, ex: 55 = Brasil, 11 = SP)
       const numero = "5599999999999"; 
-
       // Mensagem pré-formatada
       const mensagem = `Olá, meu nome é ${nome}.%0AEmail: ${email}%0AWhatsApp: ${whatsapp}%0AQuero mais informações sobre o curso!`;
-
       // Redireciona pro WhatsApp
       window.open(`https://wa.me/${numero}?text=${mensagem}`, "_blank");
     });
