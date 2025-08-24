@@ -1,0 +1,4 @@
+meusite/videos
+├── index.php
+├── videos/
+│   └── Zyone.mp4
