@@ -84,7 +84,7 @@
       cursor: pointer;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       text-decoration: none;
-      margin-bottom: 25px;
+      margin-bottom: 10px;
     }
 
     .btn:hover {
@@ -94,6 +94,7 @@
 
     form {
       text-align: left;
+      margin-top: 20px;
     }
 
     form label {
@@ -129,6 +130,22 @@
       box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
     }
 
+    .contact-text {
+      margin-top: 15px;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    .contact-text a {
+      color: #25d366;
+      text-decoration: none;
+    }
+
+    .contact-text a:hover {
+      text-decoration: underline;
+    }
+
     footer {
       text-align: center;
       padding: 15px;
@@ -157,17 +174,24 @@
   <main>
     <div class="card">
       <h2>Aprenda a Vender Mais!</h2>
+
       <div class="video">
-        <!-- Substitua o link abaixo pelo vídeo que você vai mandar -->
-        <iframe src="https://www.youtube.com/watch?v=M8NGnNe5UKw" allowfullscreen></iframe>
+        <!-- Substitua pelo seu vídeo -->
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
       </div>
+
       <p>
         Descubra as estratégias que vão transformar suas vendas online.  
         Curso prático, direto ao ponto e com técnicas comprovadas para aumentar seus resultados.
       </p>
 
-      <!-- Botão direto para o link de pagamento da Kiwify -->
+      <!-- Botão de pagamento Kiwify -->
       <a href="https://pay.kiwify.com.br/DdlAQTt" class="btn" target="_blank">Quero me inscrever</a>
+
+      <!-- Texto clicável de contato -->
+      <p class="contact-text">
+        Para mais informações, <a href="https://wa.me/5511915928792?text=Olá!%20Quero%20mais%20informações%20sobre%20o%20curso%20Zyone." target="_blank"><strong>fale comigo pelo WhatsApp!</strong></a>
+      </p>
 
       <!-- Formulário de contato -->
       <form id="whatsappForm">
@@ -193,18 +217,13 @@
     document.getElementById("whatsappForm").addEventListener("submit", function(e){
       e.preventDefault();
 
-      // Pegando os valores do formulário
       const nome = document.getElementById("nome").value;
       const email = document.getElementById("email").value;
       const whatsapp = document.getElementById("whatsapp").value;
 
-      // Número do WhatsApp já configurado
       const numero = "5511915928792"; 
-
-      // Mensagem pré-formatada
       const mensagem = `Olá, meu nome é ${nome}.%0AEmail: ${email}%0AMeu WhatsApp: ${whatsapp}%0AQuero mais informações sobre o curso Zyone!`;
 
-      // Redireciona pro WhatsApp
       window.open(`https://wa.me/${numero}?text=${mensagem}`, "_blank");
     });
   </script>
