@@ -32,7 +32,7 @@
         <h2>Sobre o Curso</h2>
         <p>Quer aprender <strong>a vender perfumes online e ganhar dinheiro de verdade</strong>? 💰</p>
         <p>No curso <strong>Venda Mais na Zayone – Perfumes na Prática</strong>, você vai descobrir passo a passo como criar sua loja, cadastrar produtos corretamente e atrair clientes todos os dias. Ideal para quem quer começar do zero e transformar o hobby de vender perfumes em renda extra consistente.</p>
-        <a href="https://pay.kiwify.com.br/DdlAQTt" class="buy-button">Comprar Agora</a>
+        <a href="https://seulinkdepagamento.com" class="buy-button">Comprar Agora</a>
     </div>
 
     <div class="course-video">
@@ -58,7 +58,7 @@
 
 <footer>
     &copy; <?php echo date("Y"); ?> Venda Mais na Zayone. Todos os direitos reservados.<br>
-    Contato: fernando.doratiotto@gmail.com ou +55 (11)915928792
+    Contato: suporte@seudominio.com
 </footer>
 
 </body>
