@@ -1,65 +1,210 @@
-<?php
-// index.php
-?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venda Mais na Zayone – Perfumes na Prática</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f8f8f8; color:#333; }
-        header { background:#ff6f61; color:#fff; padding:20px 0; text-align:center; }
-        header h1 { margin:0; font-size:2em; }
-        .container { max-width:900px; margin:20px auto; padding:0 20px; }
-        .course-description, .benefits, .course-video { background:#fff; padding:20px; margin-bottom:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1); }
-        h2 { color:#ff6f61; }
-        .buy-button { display:inline-block; padding:15px 30px; background:#ff6f61; color:#fff; text-decoration:none; font-weight:bold; border-radius:10px; transition:0.3s; }
-        .buy-button:hover { background:#e65b50; }
-        footer { text-align:center; padding:15px 0; background:#333; color:#fff; }
-        video { border-radius:10px; width:100%; max-height:500px; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso Zyone - Venda Mais</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      padding: 20px;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 700px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .card h2 {
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    .card p {
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .video {
+      margin-bottom: 20px;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .video iframe {
+      width: 100%;
+      height: 350px;
+      border: none;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+      margin-bottom: 25px;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(255, 65, 108, 0.4);
+    }
+
+    form {
+      text-align: left;
+    }
+
+    form label {
+      font-weight: 600;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    form input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    form button {
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    form button:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .video iframe {
+        height: 200px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    🚀 Curso Zyone - Venda Mais
+  </header>
 
-<header>
-    <h1>Venda Mais na Zayone – Perfumes na Prática</h1>
-</header>
+  <main>
+    <div class="card">
+      <h2>Aprenda a Vender Mais!</h2>
+      <div class="video">
+        <!-- Substitua o link abaixo pelo vídeo que você vai mandar -->
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+      </div>
+      <p>
+        Descubra as estratégias que vão transformar suas vendas online.  
+        Curso prático, direto ao ponto e com técnicas comprovadas para aumentar seus resultados.
+      </p>
+      <a href="#" class="btn">Quero me inscrever</a>
 
-<div class="container">
+      <!-- Formulário de contato -->
+      <form id="whatsappForm">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" required>
 
-    <div class="course-description">
-        <h2>Sobre o Curso</h2>
-        <p>Quer aprender <strong>a vender perfumes online e ganhar dinheiro de verdade</strong>? 💰</p>
-        <p>No curso <strong>Venda Mais na Zayone – Perfumes na Prática</strong>, você vai descobrir passo a passo como criar sua loja, cadastrar produtos corretamente e atrair clientes todos os dias. Ideal para quem quer começar do zero e transformar o hobby de vender perfumes em renda extra consistente.</p>
-        <a href="https://pay.kiwify.com.br/DdlAQTt" class="buy-button">Comprar Agora</a>
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="whatsapp">WhatsApp</label>
+        <input type="tel" id="whatsapp" name="whatsapp" placeholder="(99) 99999-9999" required>
+
+        <button type="submit">Enviar pelo WhatsApp</button>
+      </form>
     </div>
+  </main>
 
-    <div class="course-video">
-        <h2>Assista ao vídeo do curso</h2>
-        <video controls>
-            <source src="videos/Zyone.mp4" type="video/mp4">
-            Seu navegador não suporta o elemento de vídeo.
-        </video>
-    </div>
+  <footer>
+    © 2025 Zyone - Todos os direitos reservados
+  </footer>
 
-    <div class="benefits">
-        <h2>O que você vai aprender</h2>
-        <ul>
-            <li>Como criar sua conta de vendedor na Zayone</li>
-            <li>Configurar sua loja de forma profissional</li>
-            <li>Cadastrar perfumes com fotos e descrições que vendem</li>
-            <li>Divulgar seus produtos nas redes sociais</li>
-            <li>Técnicas de atendimento e fidelização</li>
-        </ul>
-    </div>
+  <script>
+    document.getElementById("whatsappForm").addEventListener("submit", function(e){
+      e.preventDefault();
 
-</div>
+      // Pegando os valores do formulário
+      const nome = document.getElementById("nome").value;
+      const email = document.getElementById("email").value;
+      const whatsapp = document.getElementById("whatsapp").value;
 
-<footer>
-    &copy; <?php echo date("Y"); ?> Venda Mais na Zayone. Todos os direitos reservados.<br>
-    Contato: fernando.doratiotto@gmail.com ou +55 (11)915928792
-</footer>
+      // Número do seu WhatsApp (coloque o seu com DDI e DDD, ex: 55 = Brasil, 11 = SP)
+      const numero = "5599999999999"; 
 
+      // Mensagem pré-formatada
+      const mensagem = `Olá, meu nome é ${nome}.%0AEmail: ${email}%0AWhatsApp: ${whatsapp}%0AQuero mais informações sobre o curso!`;
+
+      // Redireciona pro WhatsApp
+      window.open(`https://wa.me/${numero}?text=${mensagem}`, "_blank");
+    });
+  </script>
 </body>
 </html>
