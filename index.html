@@ -14,23 +14,24 @@
     }
 
     body {
-      background: linear-gradient(135deg, #4facfe, #00f2fe);
-      color: #333;
+      /* Imagem de fundo */
+      background: url('zyone-fundo.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
 
     header {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(10px);
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(5px);
       padding: 25px 10px;
       text-align: center;
       font-size: 2rem;
       font-weight: 700;
-      color: #fff;
       letter-spacing: 1px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
     main {
@@ -42,7 +43,7 @@
     }
 
     .card {
-      background: #fff;
+      background: rgba(255, 255, 255, 0.85); /* fundo semi-transparente */
       border-radius: 25px;
       padding: 40px 30px;
       max-width: 750px;
@@ -51,6 +52,7 @@
       box-shadow: 0 15px 35px rgba(0,0,0,0.2);
       animation: fadeUp 1s ease-in-out;
       transition: transform 0.3s ease;
+      color: #222;
     }
 
     .card:hover {
@@ -59,7 +61,6 @@
 
     .card h2 {
       margin-bottom: 20px;
-      color: #222;
       font-size: 2rem;
     }
 
@@ -154,7 +155,6 @@
       margin-top: 18px;
       font-weight: 600;
       font-size: 1rem;
-      color: #333;
     }
 
     .contact-text a {
@@ -170,7 +170,7 @@
     footer {
       text-align: center;
       padding: 18px;
-      background: rgba(255, 255, 255, 0.12);
+      background: rgba(0,0,0,0.3);
       color: #fff;
       font-size: 0.95rem;
       letter-spacing: 0.5px;
@@ -204,7 +204,7 @@
       <h2>Aprenda a Vender Mais!</h2>
 
       <div class="video">
-        <iframe src="https://www.youtube.com/embed/2G9_GnUJUkY?si=Lh2hKDZAdTgn-Lcg" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
       </div>
 
       <p>
@@ -256,3 +256,4 @@
   </script>
 </body>
 </html>
+
