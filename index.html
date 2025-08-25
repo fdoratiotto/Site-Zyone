@@ -8,7 +8,6 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
 
-    /* Fundo do site - imagem hospedada online */
     body {
       background: url('https://i.scdn.co/image/ab67656300005f1f026c5642c69b5013d4431e7c') no-repeat center center fixed;
       background-size: cover;
@@ -56,20 +55,32 @@
     .video { margin-bottom: 20px; border-radius: 12px; overflow: hidden; }
     .video iframe { width: 100%; height: 360px; border: none; border-radius: 8px; }
 
+    /* Botões animados */
     .btn {
       display:inline-block;
-      padding: 14px 34px;
-      background: linear-gradient(135deg,#25d366,#128c7e);
-      color:#fff; border-radius:28px; text-decoration:none; font-weight:700;
-      box-shadow: 0 8px 22px rgba(37,211,102,0.35);
-      transition: transform .22s ease, box-shadow .22s ease;
-      margin-bottom: 10px;
+      padding: 16px 36px;
+      font-weight:700;
+      border-radius:30px;
+      text-decoration:none;
+      color:#fff;
+      background: linear-gradient(270deg, #25d366, #128c7e, #25d366);
+      background-size: 600% 600%;
+      box-shadow: 0 8px 25px rgba(37,211,102,0.35);
+      cursor:pointer;
+      margin-bottom: 12px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: gradientAnimation 4s ease infinite;
     }
-    .btn:hover { transform: scale(1.06); box-shadow: 0 14px 30px rgba(37,211,102,0.45); }
+    .btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 12px 35px rgba(37,211,102,0.45);
+    }
 
-    .contact-text { margin-top:12px; font-weight:600; color:#222; }
-    .contact-text a { color:#0b845f; text-decoration:none; font-weight:800; }
-    .contact-text a:hover { text-decoration:underline; }
+    @keyframes gradientAnimation {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
 
     form { text-align:left; margin-top:18px; }
     form label { font-weight:600; margin-bottom:6px; display:block; }
@@ -77,14 +88,19 @@
       width:100%; padding:12px; margin-bottom:14px; border-radius:10px;
       border:1px solid #ccc; font-size:1rem;
     }
-    form input:focus { outline:none; box-shadow:0 0 8px rgba(37,211,102,0.25); border-color:#25d366; }
+    form input:focus { outline:none; box-shadow:0 0 10px rgba(37,211,102,0.35); border-color:#25d366; }
 
     form button {
-      width:100%; padding:14px; border-radius:28px; border:none;
-      background:linear-gradient(135deg,#25d366,#128c7e); color:#fff; font-weight:700;
-      box-shadow: 0 8px 22px rgba(37,211,102,0.35); cursor:pointer; transition:transform .22s;
+      width:100%; padding:16px; border-radius:28px; border:none;
+      background: linear-gradient(270deg, #25d366, #128c7e, #25d366);
+      background-size: 600% 600%;
+      color:#fff; font-weight:700;
+      box-shadow: 0 8px 25px rgba(37,211,102,0.35);
+      cursor:pointer;
+      animation: gradientAnimation 4s ease infinite;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
-    form button:hover { transform: scale(1.03); }
+    form button:hover { transform: scale(1.05); box-shadow: 0 12px 35px rgba(37,211,102,0.45); }
 
     footer {
       text-align:center; padding:14px; color:#fff; background:rgba(0,0,0,0.25);
@@ -107,21 +123,18 @@
       <h2>Aprenda a Vender Mais!</h2>
 
       <div class="video">
-        <!-- Substitua pelo seu vídeo embed do YouTube -->
         <iframe src="https://www.youtube.com/embed/2G9_GnUJUkY?si=O_wCwu5SxKFzSOdT" allowfullscreen></iframe>
       </div>
 
       <p>Descubra as estratégias que vão transformar suas vendas online. Curso prático e direto ao ponto.</p>
 
-      <!-- Botão de pagamento Kiwify (primeiro) -->
-      <a href="https://pay.kiwify.com.br/DdlAQTt" class="btn" target="_blank">Quero me inscrever</a>
+      <!-- Botão de pagamento com fluxo automático para WhatsApp -->
+      <button class="btn" id="pagamentoBtn">Quero me inscrever</button>
 
-      <!-- Texto clicável de contato pelo WhatsApp (depois do pagamento) -->
       <p class="contact-text">
-        Para dúvidas ou mais informações, <a href="https://wa.me/5511915928792?text=Olá!%20Quero%20mais%20informações%20sobre%20o%20curso%20Zyone." target="_blank"><strong>fale comigo pelo WhatsApp!</strong></a>
+        Após a inscrição, você será direcionado automaticamente para o WhatsApp para confirmar seus dados.
       </p>
 
-      <!-- Formulário de contato -->
       <form id="whatsappForm">
         <label for="nome">Nome</label>
         <input type="text" id="nome" name="nome" required>
@@ -140,6 +153,29 @@
   <footer>© 2025 Zyone - Todos os direitos reservados</footer>
 
   <script>
+    const pagamentoBtn = document.getElementById("pagamentoBtn");
+
+    pagamentoBtn.addEventListener("click", () => {
+      const nome = document.getElementById("nome").value || "Nome não informado";
+      const email = document.getElementById("email").value || "Email não informado";
+      const whatsapp = document.getElementById("whatsapp").value || "WhatsApp não informado";
+      const numero = "5511915928792";
+
+      // Abrir página de pagamento em nova aba
+      const pagamentoWindow = window.open("https://pay.kiwify.com.br/DdlAQTt", "_blank");
+
+      // Checar se a aba de pagamento foi fechada
+      const checkWindowClosed = setInterval(() => {
+        if (pagamentoWindow.closed) {
+          clearInterval(checkWindowClosed);
+          // Abrir WhatsApp automaticamente
+          const mensagem = `Olá, meu nome é ${nome}.%0AEmail: ${email}%0AMeu WhatsApp: ${whatsapp}%0AAcabei de me inscrever no curso Zyone!`;
+          window.open(`https://wa.me/${numero}?text=${mensagem}`, "_blank");
+        }
+      }, 500);
+    });
+
+    // Formulário tradicional de WhatsApp também funciona
     document.getElementById("whatsappForm").addEventListener("submit", function(e){
       e.preventDefault();
       const nome = document.getElementById("nome").value;
